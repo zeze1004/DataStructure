@@ -2,8 +2,10 @@
 using namespace std;
 
 int factorial(int num) {
+    // 순환을 멈추는 부분
     if (num <= 1)
         return 1;
+    // 순환 호출하는 부분
     else return (num * factorial(num - 1));
 }
 
