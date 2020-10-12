@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #define max_que_size 5
 
@@ -57,19 +57,19 @@ int is_full(QueType *q) {
 
 // 원형큐 출력 함수
 void que_print(QueType *q) {
-    cout << "Que: front = " << q->front << " rear = " << q->rear;
+    printf( "Que: front = %d, rear = %d", q->front, q->rear);
     // que가 비어있지 않으면 if문 실행
     if(!is_empty(&q)) {
         int i = q->front;
         do {
             i = (i + 1) % max_que_size;
-            cout << q->data[i];
+            printf(q->data[i]);
             // i가 rear까지 갔으면 다 출력한거이므로 break
             if(i == q->rear)
                 break;
         } while (i != q->front);
     } 
-    cout << '\n';
+    printf("\n");
 }
 
 void enque(QueType *q, element item) {
