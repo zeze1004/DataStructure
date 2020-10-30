@@ -89,6 +89,7 @@ int main() {
         head = insert_first(head, i);
         print(head);
     }
+
     head = insert_sort(head, 8);
     head = insert_sort(head, 7);
     head = insert_sort(head, 6);
