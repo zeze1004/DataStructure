@@ -68,7 +68,7 @@ node *insert_sort(node* head, element data) {
     p->data = data; // 초기화
     p->next = NULL; // 초기화
 
-    if(head = NULL) {
+    if(head == NULL) {
         head = p;
         return head;
     }
