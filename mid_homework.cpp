@@ -3,6 +3,7 @@
 #endif
 
 #include <stdio.h>
+#include <time.h>
 
 #define	MAX_CACHE_SIZE		8192
 
@@ -112,6 +113,7 @@ int main(int argc, char* argv[])
 	FILE* fp = NULL;
 
 	init();
+    clock_t start_time, end_time;
 
 	if ((fp = fopen(TRACE_FILE_NAME, "r")) == NULL) {
 		printf("%s trace file open fail.\n", TRACE_FILE_NAME);
@@ -120,6 +122,8 @@ int main(int argc, char* argv[])
 	}
 	else {
 		printf("start simulation!\n");
+        start_time = clock();
+        printf("start_time: %d\n", start_time);
 	}
 
     // unsigned long %lu
@@ -128,9 +132,13 @@ int main(int argc, char* argv[])
         curtime++;
         pgref(blkno);
     }
-    
+    end_time = clock();
+    printf("end_time: %d\n", end_time);
+
+    float time = (float)(end_time - start_time)/CLOCKS_PER_SEC;
+    printf("total_time: %f \n",time);
+        
 	fclose(fp);
-    printf("total access: %lu, hit: %lu, miss: %lu \n", curtime, hit, miss);
     printf("hit ratio: %f \n",(float)hit/(float)curtime);
 	return 0;
 }
