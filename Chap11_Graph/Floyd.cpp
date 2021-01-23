@@ -21,8 +21,12 @@ void print_graph(GraphType *g)
 	{
 		for (j = 0; j < g->n; j++)
 		{
+			// 연결되지 않는 노드는 무한이므로 * 출력
 			if (graph[i][j] == INF)
 				cout << " * ";
+			// 연결된 노드는 INF 아니므로 배열 내의 가중치 출력
+			else
+				cout << graph[i][j] << " ";
 		}
 		cout << '\n';
 	}
@@ -38,11 +42,9 @@ void floyd(GraphType *g)
 		for (j = 0; j < g->n; j++)
 		{
 			graph[i][j] = g->weight[i][j];
-			cout << "g->weight[" << i << "][" << j << "]" << '\n';
 		}
 	}
 	print_graph(g);
-	cout << "first print_graph(" << g << ")" << '\n';
 
 	// k 노드와 거쳐서 목표 노드를 갈 때 원래 가중치 값 보다 적으면 갱신
 	for (k = 0; k < g->n; k++)
@@ -56,7 +58,6 @@ void floyd(GraphType *g)
 			}
 		}
 		print_graph(g);
-		cout << "second print_graph(" << g << ")" << '\n';
 	}
 }
 
@@ -65,7 +66,8 @@ int main()
 	ios_base ::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	GraphType g = {7,
+	GraphType g = {7, // GraphType에 선언된 n
+										// GraphType에 선언된 weight[][]
 								 {{0, 7, INF, INF, 3, 10, INF},
 									{7, 0, 4, 10, 2, 6, INF},
 									{INF, 4, 0, 2, INF, INF, INF},
