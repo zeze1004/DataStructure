@@ -1,1 +1,4 @@
 Chap11_Graph/Floyd.exe
+*.exe
+.gitignore
+.vscode
