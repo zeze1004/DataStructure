@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\g++.exe",
+            "command": "D:/Programs/mingw-w64-v8.0.0/bin/g++.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -16,10 +16,29 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "group": "build"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 활성 파일 빌드",
+            "command": "D:/Programs/mingw-w64-v8.0.0/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:/Programs/mingw-w64-v8.0.0/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "detail": "컴파일러: D:/Programs/mingw-w64-v8.0.0/bin/g++.exe"
         }
     ],
     "version": "2.0.0"
