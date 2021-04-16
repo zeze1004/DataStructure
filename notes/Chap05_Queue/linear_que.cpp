@@ -39,6 +39,11 @@ int is_full(que *q) {
         return 0;
 }
 
+int main() {
+
+    return 0;
+}
+
 
 
 
