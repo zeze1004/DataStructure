@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReverseArray {
-    // a[idx1]과 a[idx2] 의 값을 바꿈
+    // a[idx1]과 a[idx2]의 값을 바꿈
     static void swap(int[] a, int idx1, int idx2) {
         int t = a[idx1]; a[idx1] = a[idx2]; a[idx2] = t;
     }
